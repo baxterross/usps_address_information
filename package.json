@@ -1,0 +1,21 @@
+{
+  "name": "usps_address_information",
+  "version": "0.0.0",
+  "description": "usps_address_information ========================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/baxterross/usps_address_information.git"
+  },
+  "author": "Baxter Ross",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/baxterross/usps_address_information/issues"
+  },
+  "dependencies": {
+    "express": "~4.10.4"
+  }
+}
