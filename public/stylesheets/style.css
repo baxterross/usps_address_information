@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.status-parameter {
+  font-size: 60px;
+}
+.status-symbol {
+  font-size: 80px;
+  position: relative;
+  top: 5px;
+}
