@@ -1,7 +1,10 @@
 extends layout
 
 block content
+  h1 Query Input
+  div= query.address
+  
   h1 Query Response
   div= address.Address1
   div= address.Address2
-  div= address.City+', '+address.State+' '+address.Zip5
+  div= address.City+', '+address.State+' '+address.Zip5+'- '+address.Zip4
