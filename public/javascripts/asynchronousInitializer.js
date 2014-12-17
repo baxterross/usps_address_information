@@ -6,25 +6,21 @@
     this.init = function(element) {
       this.element = element;
       this.c = completely(this.element);
-      this.c.options = [
-        'apple',
-        'banana',
-        'cherry',
-        'donut',
-        'eclair',
-        'flan'
-      ];
+      this.c.options = [];
       this.c.startFrom = 0;
       this.c.onChange = this.getSuggestions;
     }.bind(this);
     this.getSuggestions = function(text) {
-      if (text == '')
-        this.c.options = [];
-      this.c.repaint();
       this.request('/suggestions/js/'+text);
+      if (text.length < 4) {
+        this.c.options = [];
+      }
+      this.c.repaint();
     }.bind(this);
     this.cb_getSuggestions = function(suggestions) {
-      this.c.options = suggestions;
+      if (text.length > 3) {
+        this.c.options = suggestions;
+      }
       this.c.repaint();
     }.bind(this);
     this.request = function(path) {
