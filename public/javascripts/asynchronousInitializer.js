@@ -18,7 +18,7 @@
       this.c.repaint();
     }.bind(this);
     this.cb_getSuggestions = function(suggestions) {
-      if (text.length > 3) {
+      if (this.c.input.value.length > 3) {
         this.c.options = suggestions;
       }
       this.c.repaint();
@@ -27,9 +27,9 @@
       var doc = document.getElementsByTagName('head')[0],
           tag = document.createElement('script'),
           el = document.getElementById('address'),
-          requestUrl = 'http://localhost:3000'+path
+          requestUrl = 'http://address-autocomplete.herokuapp.com'+path
       tag.setAttribute('type', 'text/javascript');
-      tag.setAttribute('src', 'http://localhost:3000'+path);
+      tag.setAttribute('src', requestUrl);
       doc.appendChild(tag);
     }
   };
