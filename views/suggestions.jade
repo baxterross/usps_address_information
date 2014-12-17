@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Query Input
+  div= query
+  
+  h1 Query Response
+  each suggestion in suggestions
+    div= suggestion.description

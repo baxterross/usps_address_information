@@ -10,9 +10,7 @@ dotenv.load();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', {
-    title: 'Express'
-  });
+  res.render('index', {});
 });
 
 router.get('/autocomplete', function(req, res) {
@@ -34,7 +32,7 @@ router.get('/autocomplete', function(req, res) {
 
     response.on('end', function() {
       data = JSON.parse(data);
-      console.log(data.predictions[0]);
+      console.log(data.predictions);
       var testServer = 'http://production.shippingapis.com/ShippingAPITest.dll',
           liveServer = 'http://production.shippingapis.com/ShippingAPI.dll',
           address = data.predictions[0],

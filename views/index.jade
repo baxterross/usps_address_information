@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Autocomplete
+  div#autocomplete-holder
+  script.
+    var doc = document.getElementsByTagName('head')[0],
+        tag = document.createElement('script'),
+        el = document.getElementById('autocomplete-holder');
+    tag.setAttribute('type', 'text/javascript');
+    tag.setAttribute('src', 'http://localhost:3000/public/javascripts/asynchronousInitializer.js');
+    tag.onload = function() {
+      window.initAddressAutocomplete(el);
+    }
+    doc.appendChild(tag);
