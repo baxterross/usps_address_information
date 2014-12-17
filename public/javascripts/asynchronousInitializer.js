@@ -15,10 +15,11 @@
         'flan'
       ];
       this.c.startFrom = 0;
-//      this.showSuggestions = this.c.onChange;
       this.c.onChange = this.getSuggestions;
     }.bind(this);
     this.getSuggestions = function(text) {
+      if (text == '')
+        this.c.options = [];
       this.c.repaint();
       this.request('/suggestions/js/'+text);
     }.bind(this);
