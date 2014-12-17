@@ -8,7 +8,7 @@ block content
         tag = document.createElement('script'),
         el = document.getElementById('autocomplete-holder');
     tag.setAttribute('type', 'text/javascript');
-    tag.setAttribute('src', 'http://localhost:3000/public/javascripts/asynchronousInitializer.js');
+    tag.setAttribute('src', 'http://address-autocomplete.herokuapp.com/public/javascripts/asynchronousInitializer.js');
     tag.onload = function() {
       window.initAddressAutocomplete(el);
     }

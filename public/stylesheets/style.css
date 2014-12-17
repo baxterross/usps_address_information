@@ -7,11 +7,9 @@ a {
   color: #00B7FF;
 }
 
-.status-parameter {
-  font-size: 60px;
-}
-.status-symbol {
-  font-size: 80px;
-  position: relative;
-  top: 5px;
+#autocomplete-holder {
+  border: 1px solid #ccc;
+  padding: 6px 4px 4px;
+  width: 800px;
+  box-shadow: inset 1px 1px 6px #eaeaea;
 }
