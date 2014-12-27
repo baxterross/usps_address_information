@@ -68,8 +68,8 @@
             var values = [
                   street.value.trim(),
                   city.value.trim(),
-                  state.value.trim(),
-                  zip.value.trim()
+                  state.value.trim()
+//                  zip.value.trim() // zip seems to mess up the autocompleter
                 ],
                 value = values.join(' ').replace(['  '], [' ']).trim();
             this.getSuggestions(value);
