@@ -2,7 +2,7 @@
 
   var autocomplete = new Autocomplete();
   function Autocomplete() {
-    this.server = 'http://address-autocomplete.herokuapp.com';
+    this.server = '//address-autocomplete.herokuapp.com';
     this.suggestions = [];
     this.states = {
       AL: 'Alabama',
