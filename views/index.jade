@@ -2,32 +2,34 @@ extends layout
 
 block content
   h1 Autocomplete
-  div#autocomplete-holder
+  div(id="j_id0:j_id1:leadPB:AddressInformationPBS")
     label Street
-    input#street(type='text' name='street')
+    textarea(id='j_id0:j_id1:leadPB:AddressInformationPBS:j_id7' name='j_id0:j_id1:leadPB:AddressInformationPBS:j_id7')
     br
 
     label City
-    input#city(type: 'text', name: 'city')
+    input(type='text' id='j_id0:j_id1:leadPB:AddressInformationPBS:j_id9' name='j_id0:j_id1:leadPB:AddressInformationPBS:j_id9')
     br
 
     label State
-    select#state(type: 'text', name: 'state')
+    select(type='text' id='j_id0:j_id1:leadPB:AddressInformationPBS:j_id11' name='j_id0:j_id1:leadPB:AddressInformationPBS:j_id11')
+      option(value='')
       option(value='Alabama') Alabama
       option(value='Alaska') Alaska
       option(value='Arizona') Arizona
       option(value='Arkansas') Arkansas
+      option(value='California') California
     br
 
     label Zip Code
-    input#zipCode(type: 'text', name: 'zipCode')
+    input(type='text' id='j_id0:j_id1:leadPB:AddressInformationPBS:j_id13' name='j_id0:j_id1:leadPB:AddressInformationPBS:j_id13')
     br
 
   script.
     var doc = document.getElementsByTagName('head')[0],
         tag = document.createElement('script');
     tag.setAttribute('type', 'text/javascript');
-    tag.setAttribute('src', 'http://address-autocomplete.herokuapp.com/public/javascripts/asynchronousInitializer.js');
+    tag.setAttribute('src', 'http://localhost:3000/public/javascripts/asynchronousInitializer.js');
     tag.onload = function() {
       window.initAddressAutocomplete();
     }
