@@ -7,9 +7,13 @@ a {
   color: #00B7FF;
 }
 
-#autocomplete-holder {
-  border: 1px solid #ccc;
-  padding: 6px 4px 4px;
-  width: 800px;
-  box-shadow: inset 1px 1px 6px #eaeaea;
+label {
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: right;
+  padding: 8px 10px 0;
+}
+input, select {
+  margin: 2px 0 6px;
 }

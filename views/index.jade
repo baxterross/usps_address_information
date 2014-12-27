@@ -3,13 +3,32 @@ extends layout
 block content
   h1 Autocomplete
   div#autocomplete-holder
+    label Street
+    input#street(type='text' name='street')
+    br
+
+    label City
+    input#city(type: 'text', name: 'city')
+    br
+
+    label State
+    select#state(type: 'text', name: 'state')
+      option(value='Alabama') Alabama
+      option(value='Alaska') Alaska
+      option(value='Arizona') Arizona
+      option(value='Arkansas') Arkansas
+    br
+
+    label Zip Code
+    input#zipCode(type: 'text', name: 'zipCode')
+    br
+
   script.
     var doc = document.getElementsByTagName('head')[0],
-        tag = document.createElement('script'),
-        el = document.getElementById('autocomplete-holder');
+        tag = document.createElement('script');
     tag.setAttribute('type', 'text/javascript');
     tag.setAttribute('src', 'http://address-autocomplete.herokuapp.com/public/javascripts/asynchronousInitializer.js');
     tag.onload = function() {
-      window.initAddressAutocomplete(el);
+      window.initAddressAutocomplete();
     }
     doc.appendChild(tag);
