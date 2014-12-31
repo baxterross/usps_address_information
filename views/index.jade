@@ -27,9 +27,15 @@ block content
 
   script.
     var doc = document.getElementsByTagName('head')[0],
-        tag = document.createElement('script');
+        tag = document.createElement('script'),
+        src = '';
+    if (window.location.href.indexOf('localhost') >= 0) {
+      src = 'http://localhost:3000/public/javascripts/asynchronousInitializer.js';
+    } else {
+      src = '//address-autocomplete.herokuapp.com/public/javascripts/asynchronousInitializer.js';
+    }
     tag.setAttribute('type', 'text/javascript');
-    tag.setAttribute('src', 'http://localhost:3000/public/javascripts/asynchronousInitializer.js');
+    tag.setAttribute('src', src);
     tag.onload = function() {
       window.initAddressAutocomplete();
     }
