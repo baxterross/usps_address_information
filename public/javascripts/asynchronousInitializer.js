@@ -2,7 +2,11 @@
 
   var autocomplete = new Autocomplete();
   function Autocomplete() {
-    this.server = '//address-autocomplete.herokuapp.com';
+    if (window.location.href.indexOf('localhost') >= 0) {
+      this.server = window.location.origin;
+    } else {
+      this.server = '//address-autocomplete.herokuapp.com';
+    }
     this.suggestions = [];
     this.states = {
       AL: 'Alabama',
