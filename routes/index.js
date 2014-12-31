@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var qs = require('qs');
-var http = require('http')
-var https = require('https')
+var http = require('http');
+var https = require('https');
 var parseString = require('xml2js').parseString;
 var dotenv = require('dotenv');
 dotenv.load();
