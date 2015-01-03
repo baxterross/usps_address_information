@@ -62,20 +62,21 @@
       WY: 'Wyoming'
     };
     this.init = function() {
-      var wrapper = this.wrapper = document.getElementById('j_id0:j_id1:leadPB:AddressInformationPBS'),
-          street = this.street = document.getElementById('j_id0:j_id1:leadPB:AddressInformationPBS:j_id7'),
-          city = this.city = document.getElementById('j_id0:j_id1:leadPB:AddressInformationPBS:j_id9'),
-          state = this.state = document.getElementById('j_id0:j_id1:leadPB:AddressInformationPBS:j_id11'),
-          zip = this.zip = document.getElementById('j_id0:j_id1:leadPB:AddressInformationPBS:j_id13'),
+      var wrapper = this.wrapper = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37'),
+          street = this.street = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38'),
+          city = this.city = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40'),
+          state = this.state = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42'),
+          zip = this.zip = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44'),
           eventName = 'input',
           eventHandler = function() {
             var values = [
                   street.value.trim(),
                   city.value.trim(),
-                  state.value.trim()
-//                  zip.value.trim() // zip seems to mess up the autocompleter
+                  state.value.trim(),
+                  zip.value.trim()
                 ],
                 value = values.join(' ').replace(['  '], [' ']).trim();
+                value = values[0].trim();
             this.getSuggestions(value);
           }.bind(this);
       street.addEventListener(eventName, eventHandler);
