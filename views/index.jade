@@ -3,27 +3,27 @@ extends layout
 block content
   h1 Autocomplete
   div(id="j_id0:j_id1:leadPB:PropertyInformation:j_id37")
-    label Street
-    textarea(id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38')
-    br
+    div
+      label Street
+      textarea(id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38')
 
-    label City
-    input(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40')
-    br
+    div
+      label City
+      input(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40')
 
-    label State
-    select(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42')
-      option(value='')
-      option(value='Alabama') Alabama
-      option(value='Alaska') Alaska
-      option(value='Arizona') Arizona
-      option(value='Arkansas') Arkansas
-      option(value='California') California
-    br
+    div
+      label State
+      select(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42')
+        option(value='')
+        option(value='Alabama') Alabama
+        option(value='Alaska') Alaska
+        option(value='Arizona') Arizona
+        option(value='Arkansas') Arkansas
+        option(value='California') California
 
-    label Zip Code
-    input(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44')
-    br
+    div
+      label Zip Code
+      input(type='text' id='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44' name='j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44')
 
   script.
     var doc = document.getElementsByTagName('head')[0],

@@ -90,7 +90,7 @@
       this.hinter.style.margin = '-3px 0 0';
       this.hinter.style.position = 'absolute';
       this.hinter.style.background = '#fff';
-      wrapper.insertBefore(this.hinter, street.nextSibling);
+      street.parentElement.appendChild(this.hinter);
     }.bind(this);
     this.getSuggestions = function(text) {
       this.request('/suggestions/js/'+text);
