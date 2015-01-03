@@ -84,7 +84,13 @@
       state.addEventListener(eventName, eventHandler);
       zip.addEventListener(eventName, eventHandler);
       this.hinter = document.createElement('ul'),
-      wrapper.insertBefore(this.hinter, wrapper.firstChild);
+      this.hinter.style.width = street.offsetWidth+'px';
+      this.hinter.style.listStyle = 'none';
+      this.hinter.style.padding = 0;
+      this.hinter.style.margin = '-3px 0 0';
+      this.hinter.style.position = 'absolute';
+      this.hinter.style.background = '#fff';
+      wrapper.insertBefore(this.hinter, street.nextSibling);
     }.bind(this);
     this.getSuggestions = function(text) {
       this.request('/suggestions/js/'+text);
@@ -93,12 +99,15 @@
       this.suggestions = suggestions;
       this.showSuggestions()
     }.bind(this);
-    this.showSuggestions = function() {
-      var suggestion,
-          child;
+    this.removeSuggestions = function() {
+      var child;
       while (child = this.hinter.firstChild) {
         this.hinter.removeChild(child);
       }
+    }.bind(this);
+    this.showSuggestions = function() {
+      var suggestion;
+      this.removeSuggestions();
       for (var i = 0; i < this.suggestions.length; i++) {
         var item = this.suggestions[i];
         suggestion = document.createElement('li');
@@ -108,6 +117,9 @@
         suggestion.setAttribute('state', item.state);
         suggestion.setAttribute('zip', item.zip);
         suggestion.addEventListener('click', this.selectHint.bind(this, suggestion));
+        suggestion.style.fontSize = '12px';
+        suggestion.style.padding = '2px 6px';
+        suggestion.style.background = i % 2 == 0 ? '#eaeaea' : '#fff';
         this.hinter.appendChild(suggestion);
       }
     }.bind(this);
@@ -120,6 +132,7 @@
       this.city.value = city;
       this.state.value = this.states[state];
       this.zip.value = zip;
+      this.removeSuggestions();
     }.bind(this);
     this.request = function(path) {
       var doc = document.getElementsByTagName('head')[0],
