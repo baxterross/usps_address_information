@@ -66,28 +66,15 @@
           street = this.street = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38'),
           city = this.city = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40'),
           state = this.state = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42'),
-          zip = this.zip = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44'),
-          eventName = 'input',
-          eventHandler = function() {
-            var values = [
-                  street.value.trim(),
-                  city.value.trim(),
-                  state.value.trim(),
-                  zip.value.trim()
-                ],
-                value = values.join(' ').replace(['  '], [' ']).trim();
-                value = values[0].trim();
-            this.getSuggestions(value);
-          }.bind(this);
-      street.addEventListener(eventName, eventHandler);
-      city.addEventListener(eventName, eventHandler);
-      state.addEventListener(eventName, eventHandler);
-      zip.addEventListener(eventName, eventHandler);
+          zip = this.zip = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44');
+      street.addEventListener('input', function() {
+          this.getSuggestions(street.value.trim());
+      }.bind(this));
       this.hinter = document.createElement('ul'),
       this.hinter.style.width = street.offsetWidth+'px';
       this.hinter.style.listStyle = 'none';
+      this.hinter.style.margin = 0;
       this.hinter.style.padding = 0;
-      this.hinter.style.margin = '-3px 0 0';
       this.hinter.style.position = 'absolute';
       this.hinter.style.background = '#fff';
       street.parentElement.appendChild(this.hinter);
@@ -118,6 +105,7 @@
         suggestion.setAttribute('zip', item.zip);
         suggestion.addEventListener('click', this.selectHint.bind(this, suggestion));
         suggestion.style.fontSize = '12px';
+        suggestion.style.margin = '0';
         suggestion.style.padding = '2px 6px';
         suggestion.style.background = i % 2 == 0 ? '#eaeaea' : '#fff';
         this.hinter.appendChild(suggestion);
