@@ -70,7 +70,7 @@
       street.addEventListener('input', function() {
           this.getSuggestions(street.value.trim());
       }.bind(this));
-      street.setAttribute('autcomplete', 'off');
+      street.setAttribute('autocomplete', 'off');
       this.hinter = document.createElement('ul'),
       this.hinter.style.width = street.offsetWidth+'px';
       this.hinter.style.listStyle = 'none';
