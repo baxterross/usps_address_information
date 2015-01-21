@@ -61,11 +61,15 @@
       WI: 'Wisonsin',
       WY: 'Wyoming'
     };
-    this.init = function() {
-      var street = this.street = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38'),
-          city = this.city = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40'),
-          state = this.state = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42'),
-          zip = this.zip = document.getElementById('j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44');
+    this.init = function(streetId, cityId, stateId, zipId) {
+      var streetId = streetId || 'j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id38',
+          cityId = cityId || 'j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id40',
+          stateId = stateId || 'j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id42',
+          zipId = zipId || 'j_id0:j_id1:leadPB:PropertyInformation:j_id37:j_id44',
+          street = this.street = document.getElementById(streetId),
+          city = this.city = document.getElementById(cityId),
+          state = this.state = document.getElementById(stateId),
+          zip = this.zip = document.getElementById(zipId);
       street.addEventListener('input', function() {
           this.getSuggestions(street.value.trim());
       }.bind(this));
