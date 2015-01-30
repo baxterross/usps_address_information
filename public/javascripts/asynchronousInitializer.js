@@ -80,7 +80,11 @@
       this.hinter.style.padding = 0;
       this.hinter.style.position = 'absolute';
       this.hinter.style.background = '#fff';
-      street.parentElement.appendChild(this.hinter);
+      if (street.nextSibling) {
+        street.parentElement.insertBefore(this.hinter, street.nextSibling);
+      } else {
+        street.parentElement.appendChild(this.hinter);
+      }
     }.bind(this);
     this.getSuggestions = function(text) {
       this.request('/suggestions/js/'+text);
